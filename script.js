@@ -31,7 +31,7 @@ form.addEventListener("submit", (e) => {
                 let hour = result.hour;
                 let minute = result.minute;
 
-                if (hour >= 12) {
+                if (hour >= 13) {
                     let tempHour = hour;
                     tempHour = tempHour - 12;
                     if (minute < 10) {
