@@ -35,7 +35,7 @@ form.addEventListener("submit", (e) => {
                     let tempHour = hour;
                     tempHour = tempHour - 12;
                     if (minute < 10) {
-                        document.getElementById("time").innerHTML = tempHour + ":0" + minute + " <span class='sm-font'>PM</span>"
+                        document.getElementById("time").innerHTML = tempHour + ":" + minute + " <span class='sm-font'>PM</span>"
                     } else {
                         document.getElementById("time").innerHTML = tempHour + ":" + minute + " <span class='sm-font'>PM</span>"
                     }
@@ -43,7 +43,7 @@ form.addEventListener("submit", (e) => {
                 }
                 else {
                     if (minute < 10) {
-                        document.getElementById("time").innerHTML = hour + ":0" + minute + " <span class='sm-font'>AM</span>"
+                        document.getElementById("time").innerHTML = hour + ":" + minute + " <span class='sm-font'>AM</span>"
                     } else {
                         document.getElementById("time").innerHTML = hour + ":" + minute + " <span class='sm-font'>AM</span>"
                     }
