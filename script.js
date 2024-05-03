@@ -129,9 +129,7 @@ async function getCityTime(cityName) {
 // Example usage
 getCityTime("New York").then((time) => console.log(time));
 
-// GEt date in the js
-const date = new Date().getDay();
-console.log(date);
+
 
 setInterval(function () {
   let now = new Date();
