@@ -30,7 +30,7 @@ form.addEventListener("submit", (e) => {
             myInterval = setInterval(function () {
                 let hour = result.hour;
                 let minute = result.minute;
-
+                console.log(result.hour)
                 if (hour >= 13) {
                     let tempHour = hour;
                     tempHour = tempHour - 12;
@@ -40,7 +40,9 @@ form.addEventListener("submit", (e) => {
                         document.getElementById("time").innerHTML = tempHour + ":" + minute + " <span class='sm-font'>PM</span>"
                     }
 
-                }
+                }else if(hour == "00"){
+                    document.getElementById("time").innerHTML = "12" + ":" + minute + " <span class='sm-font'>AM</span>"
+                }                
                 else {
                     if (minute < 10) {
                         document.getElementById("time").innerHTML = hour + ":" + minute + " <span class='sm-font'>AM</span>"
