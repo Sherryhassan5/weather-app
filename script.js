@@ -1,7 +1,7 @@
 const form = document.querySelector("form");
 const inputField = document.getElementById("city");
 var cityName = 'Lahore';
-let dayInfo = new Date();
+let dayInfo;
 let card = document.getElementsByClassName("card")[0];
 let wrapper = document.getElementsByClassName("wrapper")[0];
 card.classList.toggle('hide');
@@ -26,11 +26,12 @@ form.addEventListener("submit", (e) => {
         .then(response => response.json())
         .then((result) => {
             document.getElementById("day").innerHTML = result.day_of_week + ", " + result.day + " " + result.month + ", " + result.year;
-            
+            dayInfo = result.hour;
             myInterval = setInterval(function () {
                 let hour = result.hour;
+                
                 let minute = result.minute;
-                console.log(result.hour)
+                
                 if (hour >= 13) {
                     let tempHour = hour;
                     tempHour = tempHour - 12;
@@ -92,14 +93,14 @@ form.addEventListener("submit", (e) => {
                 }
 
 
-
-                if (result.cloud_pct <= 20 && dayInfo.getHours() < 13) {
+                console.log(dayInfo);
+                if (result.cloud_pct <= 20 && dayInfo < 13) {
                     card.style.backgroundImage = "url('sunny.jpg')";
                     card.style.color = "black";
-                } else if (result.cloud_pct > 20 && result.cloud_pct <= 40 && dayInfo.getHours() < 13) {
+                } else if (result.cloud_pct > 20 && result.cloud_pct <= 40 && dayInfo < 13) {
                     card.style.backgroundImage = "url('rainy.jpg')";
                     document.body.style.color = "white";
-                } else if (result.cloud_pct > 20 && dayInfo.getHours() > 18) {
+                } else if (result.cloud_pct > 20 && dayInfo > 18) {
                     document.body.style.color = "white";
                 }
 
@@ -113,11 +114,6 @@ form.addEventListener("submit", (e) => {
         .catch(err => console.log(err));
 }
 );
-
-
-
-
-let day = dayInfo.getDay();
 
 
 

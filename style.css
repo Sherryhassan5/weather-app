@@ -15,7 +15,7 @@ body {
 .card {
     background-image: url("https://i.imgur.com/dpqZJV5.jpg");
     background-size: cover;
-    width: 600px;
+    width: 50%;
     height: 400px;
     border-radius: 20px;
     box-shadow: 0px 8px 16px 4px #9E9E9E;
@@ -42,4 +42,35 @@ body {
 
 .large-font {
     font-size: 60px;
+}
+
+
+
+@media screen and (max-width:1180px){
+    .card {
+        height: 345px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+       
+}
+
+
+
+
+@media screen and (max-width:880px){
+    .card {
+        width: 75%;
+    }
+       
+}
+
+@media screen and (max-width:530px){
+    .card {
+        width: 100% !important;
+        height: 400px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+       
 }
